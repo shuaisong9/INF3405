@@ -28,46 +28,46 @@ public class Client {
 			//Attente de la réception d'un message envoyé par le server sur le canal
 			
 			//envoyer un message au serveur
-			Thread sendMessage = new Thread(new Runnable() {
-	            @Override
-	            public void run() {
-			while (true)
-			{   
-					String message = scan.nextLine();  // lire message tapé par le client
-					try { 
-						out.writeUTF(message); //envoi du message au serveur
-						
-					} 
-					catch (IOException e) {
-						System.out.println("Error : " + e);
-					} 
-			}
-	            } }); 
-			
-			// recevoir un message du serveur
-			
-			Thread readMessage = new Thread(new Runnable() {
-				@Override
-	            public void run() {
-			
-			while (true){   
-					
-					try { 
-						String message = in.readUTF(); //message recu du serveur
-						System.out.println(message); // affichage du message du serveur
-						
-					} catch (IOException e) {
-						System.out.println("Error : " + e);
-						
-					}
-			
-			}}});
-			
-			//fermeture de la connexion avec le serveur
-			//socket.close();
-			
-
-}};
+//			Thread sendMessage = new Thread(new Runnable() {
+//	            @Override
+//	            public void run() {
+//			while (true)
+//			{   
+//					String message = scan.nextLine();  // lire message tapé par le client
+//					try { 
+//						out.writeUTF(message); //envoi du message au serveur
+//						
+//					} 
+//					catch (IOException e) {
+//						System.out.println("Error : " + e);
+//					} 
+//			}
+//	            } }); 
+//			
+//			// recevoir un message du serveur
+//			
+//			Thread readMessage = new Thread(new Runnable() {
+//				@Override
+//	            public void run() {
+//			
+//			while (true){   
+//					
+//					try { 
+//						String message = in.readUTF(); //message recu du serveur
+//						System.out.println(message); // affichage du message du serveur
+//						
+//					} catch (IOException e) {
+//						System.out.println("Error : " + e);
+//						
+//					}
+//			
+//			}}});
+//			
+//			//fermeture de la connexion avec le serveur
+//			//socket.close();
+//			
+//
+//}};
 
 //reste du code client
 // appels s/quentiels, on doit envoyer A, puis B et lire A PUIS B

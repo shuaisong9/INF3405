@@ -25,38 +25,38 @@ out.writeUTF("Hello from server - you are client#" + clientNumber); // envoi de 
 Scanner scan = new Scanner(System.in);  // Create a Scanner object
 
 String received;
-while (true)
-{  
-	try {
-		received = in.readUTF(); //reception du message des clients
-		//System.out.println(received); // affichage du message du client ! pas nécessaire, utile pour historique
-		//messageS = scan.nextLine();  // Read user input in server ! pas besoin
-		
-		if(received.equals("logout")){
-            this.isloggedin=false;
-            this.socket.close();
-            break;
-		}
-		
-		out.writeUTF(this.name+ " : " +received); //envoi du message aux clients
-		break;
-		         
-        // break the string into message and recipient part
-       // StringTokenizer st = new StringTokenizer(received, "#");
-       // String MsgToSend = st.nextToken();
-      //  String recipient = st.nextToken();
-
-        // search for the recipient in the connected devices list.
-        // ar is the vector storing client of active users
-       // for (ClientHandler mc : Server.ar)
-       // {
-            // if the recipient is found, write on its
-            // output stream
-         //   if (mc.name.equals(recipient) && mc.isloggedin==true)
-          //  {
-          //      mc.dos.writeUTF(this.name+" : "+MsgToSend);
-          //      break;
-          //  }
+//while (true)
+//{  
+//	try {
+//		received = in.readUTF(); //reception du message des clients
+//		//System.out.println(received); // affichage du message du client ! pas nécessaire, utile pour historique
+//		//messageS = scan.nextLine();  // Read user input in server ! pas besoin
+//		
+//		if(received.equals("logout")){
+//            this.isloggedin=false;
+//            this.socket.close();
+//            break;
+//		}
+//		
+//		out.writeUTF(this.name+ " : " +received); //envoi du message aux clients
+//		break;
+//		         
+//        // break the string into message and recipient part
+//       // StringTokenizer st = new StringTokenizer(received, "#");
+//       // String MsgToSend = st.nextToken();
+//      //  String recipient = st.nextToken();
+//
+//        // search for the recipient in the connected devices list.
+//        // ar is the vector storing client of active users
+//       // for (ClientHandler mc : Server.ar)
+//       // {
+//            // if the recipient is found, write on its
+//            // output stream
+//         //   if (mc.name.equals(recipient) && mc.isloggedin==true)
+//          //  {
+//          //      mc.dos.writeUTF(this.name+" : "+MsgToSend);
+//          //      break;
+//          //  }
 
 } catch (IOException e) {
 	System.out.println("Error handling client # " + clientNumber + ": " + e);
